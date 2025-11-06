@@ -8,6 +8,6 @@ def copy_file(command: str) -> None:
         try:
             with (open(split_command[1], "r") as copy_from_file,
                   open(split_command[2], "w") as copy_to_file):
-                copy_to_file.write(" ".join(copy_from_file.readlines()))
+                copy_to_file.write(copy_from_file.read())
         except FileNotFoundError:
             pass
